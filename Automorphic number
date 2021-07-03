@@ -1,0 +1,23 @@
+import java.util.*;
+class AutomorphicNumber
+{
+    public static void main(String args[])
+    {
+        int num,count=0;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a number:");
+        num=sc.nextInt();
+        int square=num*num;
+        int r=num;
+        while(r>0)
+        {
+            count++;
+            r=r/10;
+        }
+        int lastdigit=(int)(square%(Math.pow(10,count)));
+        if(num==lastdigit)
+        System.out.println("is a automorphic number."+num);
+        else
+        System.out.println("is not a automorphic number."+num);
+    }
+}
