@@ -1,0 +1,37 @@
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+        int s1[]=new int[n];
+        int enqueue=-1;
+        int dequeue=0;
+        for(int i=0;i<n;i++)
+        {
+            int s2=sc.nextInt();
+            if(s2==1)
+            {
+                int q=sc.nextInt();
+                s1[++enqueue]=q;
+            }
+            else if(s2==2)
+            {
+                int q=s1[dequeue++];
+            }
+            else
+            {
+                System.out.println(s1[dequeue]);
+            }
+        }
+    }
+}
