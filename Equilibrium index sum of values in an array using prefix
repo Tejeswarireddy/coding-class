@@ -1,0 +1,56 @@
+import java.util.*;
+class equilibrium
+{
+public static void main(String args[])
+   {
+     //int n=arr.length;
+     int arr[]={1,3,5,7,9,11};
+     int n=arr.length;
+//System.out.println("before increment:");
+     for(int i=0;i<n;i++)
+{
+//System.out.print(arr[i]);
+//System.out.println(" ");
+}
+     int[] prefix=new int[n];
+     prefix[0]=arr[0];
+     for(int i=1;i<n;i++)
+     { 
+       prefix[i]=prefix[i-1]+arr[i];
+     }
+     int left=1,right=3;
+     int sum=0;
+     if(left==0)
+     {   
+     sum=prefix[right];
+     }   
+     else
+     {
+     sum=prefix[right]-prefix[left-1];
+     System.out.println("Sum of values in given range before="+sum);
+     }
+     for(int i=1;i<n;i++)
+     { 
+       arr[i]=arr[i]+10;
+     }
+     //System.out.print(" ");
+    // System.out.print("after increment:");
+    for(int i=0;i<n;i++)
+{
+//System.out.println(arr[i]);
+//System.out.println(" ");
+}
+    
+     for(int i=1;i<n;i++)
+     { 
+       prefix[i]=prefix[i-1]+arr[i];
+     }
+     int a=1,b=3;
+     
+     if(a==0)
+     sum=prefix[b];
+     else
+     sum=prefix[b]-prefix[a-1];
+     System.out.println("Updated sum of values in given range="+sum);
+   }
+}
